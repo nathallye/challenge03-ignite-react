@@ -29,6 +29,8 @@ export const ProfileCard = styled.div`
 
   img {
     border-radius: 8px;
+
+    width: 9.25rem;
   }
 `;
 

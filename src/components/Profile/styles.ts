@@ -7,7 +7,7 @@ export const ProfileContainer = styled.div`
   gap: 2rem;
 
   width: 100%;
-  max-width: 864px;
+  max-width: 54rem;
   margin: 0 auto;
   margin-top: -5rem;
   padding: 0 1.5rem;
@@ -45,7 +45,7 @@ export const ProfileCardInfos = styled.div`
     align-items: center;
     justify-content: space-between;
 
-    span {
+    h1 {
       font-size: 1.5rem;
       color: ${props => props.theme["base-title"]};
     }

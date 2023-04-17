@@ -17,7 +17,7 @@ export const Profile = () => {
         />
         <ProfileCardInfos>
           <header>
-            <span>Nathallye Bacelar</span>
+            <h1>Nathallye Bacelar</h1>
             <a href="https://github.com/nathallye">
               <span>GITHUB</span>
               <ArrowUpRight size={12} color="#3294F8" />

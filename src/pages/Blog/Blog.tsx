@@ -1,8 +1,9 @@
 import { Header } from "../../components/Header";
+import { Post } from "../../components/Post";
 import { Profile } from "../../components/Profile";
 import { SearchForm } from "../../components/SearchForm";
 
-import { PostsContainer } from "./styles";
+import { BlogContainer, PostsContainer } from "./styles";
 
 export const Blog = () => {
   return (
@@ -10,9 +11,18 @@ export const Blog = () => {
       <Header />
       <Profile />
 
-      <PostsContainer>
+      <BlogContainer>
         <SearchForm />
-      </PostsContainer>
+
+        <PostsContainer>
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+          <Post />
+        </PostsContainer>
+      </BlogContainer>
     </div>
   );
 };

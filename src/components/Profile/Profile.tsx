@@ -1,8 +1,8 @@
 import {
-  ArrowUpRight,
+  ArrowSquareUpRight,
   Buildings,
-  GitBranch,
-  UserRectangle,
+  GithubLogo,
+  UsersThree,
 } from "phosphor-react";
 
 import { ProfileContainer, ProfileCard, ProfileCardInfos,  } from "./styles";
@@ -20,7 +20,7 @@ export const Profile = () => {
             <h1>Nathallye Bacelar</h1>
             <a href="https://github.com/nathallye">
               <span>GITHUB</span>
-              <ArrowUpRight size={12} color="#3294F8" />
+              <ArrowSquareUpRight size={14} color="#3294F8" />
             </a>
           </header>
           <body>
@@ -32,7 +32,7 @@ export const Profile = () => {
           </body>
           <footer>
             <span>
-              <GitBranch size={18} color="#3A536B" />
+              <GithubLogo size={18} color="#3A536B" />
               nathallye
             </span>
             <span>
@@ -40,7 +40,7 @@ export const Profile = () => {
               Avanade
             </span>
             <span>
-              <UserRectangle size={18} color="#3A536B" />
+              <UsersThree size={18} color="#3A536B" />
               30 seguidores
             </span>
           </footer>

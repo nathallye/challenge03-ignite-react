@@ -13,6 +13,10 @@ export const PostContainer = styled.div`
 
   padding: 2.3rem 2rem 2.3rem 2rem;
 
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+
   div {
     display: flex;
     justify-content: space-between;

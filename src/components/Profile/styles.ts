@@ -51,6 +51,9 @@ export const ProfileCardInfos = styled.div`
     }
 
     a {
+      display: flex;
+      align-items: center;
+      
       padding-right: 0.5rem;
       
       text-decoration: none;

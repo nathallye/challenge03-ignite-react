@@ -23,7 +23,7 @@ export const PostInfoTitle = styled.div`
   display: flex;
   flex-direction: column;
 
-  gap: 2rem;
+  gap: 1.25rem;
   padding: 2rem;
   
   background: ${props => props.theme["base-profile"]};
@@ -31,24 +31,13 @@ export const PostInfoTitle = styled.div`
 
   header {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: space-between;
-
-    div {
-      display: flex;
-      justify-content: space-between;
-
-      h1 {
-        font-size: 1.5rem;
-        color: ${props => props.theme["base-title"]};
-      }
-    }
 
     a {
       display: flex;
       align-items: center;
-      
+      gap: 0.5rem;
       padding-right: 0.5rem;
       
       text-decoration: none;
@@ -57,6 +46,18 @@ export const PostInfoTitle = styled.div`
         color: ${props => props.theme["blue-100"]};
         font-size: 0.75rem;
       }
+    }
+  }
+
+  body {
+    background: ${props => props.theme["base-profile"]};
+
+    color: ${props => props.theme["base-text"]};
+    font-size: 1rem;
+
+    h1 {
+      font-size: 1.5rem;
+      color: ${props => props.theme["base-title"]};
     }
   }
 
@@ -69,7 +70,7 @@ export const PostInfoTitle = styled.div`
       align-items: center;
       gap: 0.5rem;
 
-      color: ${props => props.theme["base-subtitle"]};
+      color: ${props => props.theme["base-span"]};
       font-size: 1rem;
     }
   }
@@ -79,5 +80,5 @@ export const PostInfoContent = styled.div`
   display: flex;
   flex-direction: column;
 
-  gap: 1.5rem;
+  padding: 2.5rem 2rem 2.5rem 2rem;
 `;

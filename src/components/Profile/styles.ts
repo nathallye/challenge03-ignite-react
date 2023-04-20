@@ -54,6 +54,7 @@ export const ProfileCardInfos = styled.div`
       display: flex;
       align-items: center;
       
+      gap: 0.5rem;
       padding-right: 0.5rem;
       
       text-decoration: none;

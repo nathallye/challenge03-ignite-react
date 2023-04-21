@@ -5,6 +5,7 @@ import {
   ChatCircle,
   GithubLogo,
 } from "phosphor-react";
+
 import { PostInfoContainer, PostInfoContent, PostInfoTitle } from "./styles";
 
 export const PostInfo = () => {
@@ -51,7 +52,7 @@ export const PostInfo = () => {
         <br />
         <p>
           <u>Dynamic typing</u>
-          <br />
+          <br /><br />
           JavaScript is a loosely typed and dynamic language. Variables in
           JavaScript are not directly associated with any particular value type,
           and any variable can be assigned (and re-assigned) values of all

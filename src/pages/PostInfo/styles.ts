@@ -37,6 +37,7 @@ export const PostInfoTitle = styled.div`
     a {
       display: flex;
       align-items: center;
+      
       gap: 0.5rem;
       padding-right: 0.5rem;
       
@@ -68,6 +69,7 @@ export const PostInfoTitle = styled.div`
     span {
       display: flex;
       align-items: center;
+
       gap: 0.5rem;
 
       color: ${props => props.theme["base-span"]};

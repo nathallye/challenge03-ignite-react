@@ -6,12 +6,12 @@ export const PostContainer = styled.div`
 
   gap: 1.25rem;
 
+  width: 24.5rem;
+  padding: 2.3rem 2rem 2.3rem 2rem;
+
   background: ${props => props.theme["base-post"]};
   border-radius: 10px;
   
-  width: 24.5rem;
-
-  padding: 2.3rem 2rem 2.3rem 2rem;
 
   @media (max-width: 600px) {
     width: 100%;
@@ -40,7 +40,6 @@ export const PostContainer = styled.div`
   p {
     color: ${props => props.theme["base-text"]};
     font-size: 1rem;
-
     text-align: left;
   }
 `;

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import {
   ArrowSquareUpRight,
   Buildings,
@@ -7,41 +8,67 @@ import {
 
 import { ProfileContainer, ProfileCard, ProfileCardInfos,  } from "./styles";
 
+interface User {
+  id: number;
+  name: string;
+  login: string;
+  bio: string;
+  location: string;
+  company: string;
+  avatar_url: string;
+  html_url: string;
+  followers: number;
+}
+
 export const Profile = () => {
+  const [user, setUser] = useState<User>();
+
+  const loadUser = async () => {
+    const response = await fetch("https://api.github.com/users/nathallye");
+    const data = await response.json();
+
+    setUser(data);
+  }
+
+  useEffect(() => {
+    loadUser();
+  }, []); // como não foi informado uma DependencyList, esse useEffect será executado apenas uma única vez
+
   return (
     <ProfileContainer>
       <ProfileCard>
         <img
-          src="https://avatars.githubusercontent.com/u/86172286"
+          src={user?.avatar_url}
           alt=""
         />
         <ProfileCardInfos>
           <header>
-            <h1>Nathallye Bacelar</h1>
-            <a href="https://github.com/nathallye">
+            <h1>{user?.name}</h1>
+            <a href={user?.html_url}>
               <span>GITHUB</span>
               <ArrowSquareUpRight size={14} color="#3294F8" />
             </a>
           </header>
-          <body>
+          <div>
             <span>
-              Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-              viverra massa quam dignissim aenean malesuada suscipit. Nunc,
-              volutpat pulvinar vel mass.
+              {user?.bio}
             </span>
-          </body>
+            <span>
+              {user?.location}
+            </span>
+          </div>
           <footer>
             <span>
               <GithubLogo size={18} color="#3A536B" />
-              nathallye
+              {user?.login}
             </span>
             <span>
               <Buildings size={18} color="#3A536B" />
-              Avanade
+              {user?.company}
             </span>
             <span>
               <UsersThree size={18} color="#3A536B" />
-              30 seguidores
+              {user?.followers} seguidores
             </span>
           </footer>
         </ProfileCardInfos>

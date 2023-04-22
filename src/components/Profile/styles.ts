@@ -22,6 +22,7 @@ export const ProfileCard = styled.div`
   display: flex;
 
   gap: 2rem;
+  width: 100%;
   padding: 2rem;
   
   background: ${props => props.theme["base-profile"]};
@@ -39,6 +40,7 @@ export const ProfileCardInfos = styled.div`
   flex-direction: column;
 
   gap: 1.5rem;
+  width: 100%;
 
   header {
     display: flex;
@@ -66,7 +68,10 @@ export const ProfileCardInfos = styled.div`
     }
   }
 
-  body {
+  div {
+    display: flex;
+    flex-direction: column;
+
     background: ${props => props.theme["base-profile"]};
 
     color: ${props => props.theme["base-text"]};

@@ -1,19 +1,22 @@
+import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
+
+import { PostsProvider } from "./contexts/PostsContext";
+import { Router } from "./Router";
 
 import { defaultTheme } from "./styles/themes/default";
 import { GlobalStyle } from "./styles/global";
-import { Router } from "./Router";
-
-import { BrowserRouter } from "react-router-dom";
 
 export const App = () => {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
       
-      <BrowserRouter>
-        <Router />
-      </BrowserRouter>
+      <PostsProvider>
+        <BrowserRouter>
+          <Router />
+        </BrowserRouter>
+      </PostsProvider>
     </ThemeProvider>
   )
 };

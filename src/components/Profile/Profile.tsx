@@ -6,6 +6,8 @@ import {
   UsersThree,
 } from "phosphor-react";
 
+import { api } from "../../lib/axios";
+
 import { ProfileContainer, ProfileCard, ProfileCardInfos,  } from "./styles";
 
 interface User {
@@ -24,10 +26,9 @@ export const Profile = () => {
   const [user, setUser] = useState<User>();
 
   const loadUser = async () => {
-    const response = await fetch("https://api.github.com/users/nathallye");
-    const data = await response.json();
+    const response = await api.get("/users/nathallye");
 
-    setUser(data);
+    setUser(response.data);
   }
 
   useEffect(() => {

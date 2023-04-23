@@ -30,6 +30,9 @@ export const PostsProvider = ({ children }: PostsProvideType) => {
       params: {
         q: query
       },
+      paramsSerializer: {
+        encode: params => params
+      }
     });
 
     setPosts(response.data.items);

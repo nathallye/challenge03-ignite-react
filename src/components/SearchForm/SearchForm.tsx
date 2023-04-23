@@ -24,7 +24,8 @@ export const SearchForm = () => {
   });
 
   const searchPostsHandler = async (data: SearchFormInputs) => {
-    await fetchPosts(data.query);
+    const query = `repo:nathallye/challenge03-ignite ${data.query}`;
+    await fetchPosts(query);
   };
 
   return (

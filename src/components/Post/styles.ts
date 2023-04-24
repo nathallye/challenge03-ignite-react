@@ -30,7 +30,7 @@ export const PostContainer = styled.div`
     }
 
     span {
-      width: 25%;
+      width: 35%;
 
       color: ${props => props.theme["base-span"]};
       font-size: 0.875rem;

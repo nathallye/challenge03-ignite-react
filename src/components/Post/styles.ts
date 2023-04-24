@@ -41,5 +41,12 @@ export const PostContainer = styled.div`
     color: ${props => props.theme["base-text"]};
     font-size: 1rem;
     text-align: left;
+
+    /*Limitar texto exibido na home*/
+    max-width: 80ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* white-space: pre-wrap; */
+    white-space: nowrap;
   }
 `;

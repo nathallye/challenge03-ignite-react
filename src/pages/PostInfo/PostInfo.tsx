@@ -1,3 +1,7 @@
+import { useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { formatDistanceToNow } from "date-fns";
+import ptBR from "date-fns/locale/pt-BR";
 import {
   ArrowSquareUpRight,
   CalendarBlank,
@@ -6,33 +10,53 @@ import {
   GithubLogo,
 } from "phosphor-react";
 
+import { UserContext } from "../../contexts/UserContext";
+import { PostsContext } from "../../contexts/PostsContext";
+
+import { dateFormatter } from "../../utils/formatterDate";
+
 import { PostInfoContainer, PostInfoContent, PostInfoTitle } from "./styles";
 
 export const PostInfo = () => {
+  const {user, fetchUser} = useContext(UserContext);
+  const {posts, fetchPosts} = useContext(PostsContext);
+
+  // TODO: Fazer outra chamada para api de busca do post 
+  
+  useEffect(() => {
+    fetchUser();
+  }, []); // como não foi informado uma DependencyList, esse useEffect será executado apenas uma única vez
+
+  // const currentPost = posts.find((post) => {
+  //   return post.id == 1679889889;
+  // });
+
+  // const convertionDate = dateFormatter(new Date(currentPost?.created_at));
+
   return (
     <PostInfoContainer>
       <PostInfoTitle>
         <header>
-          <a href="/home">
+          <Link to="/home">
             <CaretLeft size={14} color="#3294F8" />
             <span>VOLTAR</span>
-          </a>
-          <a href="https://github.com/nathallye">
+          </Link>
+          <Link to={user?.html_url ?? ""}>
             <span>VER NO GITHUB</span>
             <ArrowSquareUpRight size={14} color="#3294F8" />
-          </a>
+          </Link>
         </header>
-        <body>
+        <div>
           <h1>JavaScript data types and data structures</h1>
-        </body>
+        </div>
         <footer>
           <span>
             <GithubLogo size={18} color="#3A536B" />
-            nathallye
+            {user?.login}
           </span>
           <span>
             <CalendarBlank size={18} color="#3A536B" />
-            Há 1 dia
+            {/* {convertionDate} */}
           </span>
           <span>
             <ChatCircle size={18} color="#3A536B" />

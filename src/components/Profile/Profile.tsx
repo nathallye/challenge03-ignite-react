@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowSquareUpRight,
   Buildings,
@@ -6,33 +7,15 @@ import {
   UsersThree,
 } from "phosphor-react";
 
-import { api } from "../../lib/axios";
+import { UserContext } from "../../contexts/UserContext";
 
 import { ProfileContainer, ProfileCard, ProfileCardInfos,  } from "./styles";
 
-interface User {
-  id: number;
-  name: string;
-  login: string;
-  bio: string;
-  location: string;
-  company: string;
-  avatar_url: string;
-  html_url: string;
-  followers: number;
-}
-
 export const Profile = () => {
-  const [user, setUser] = useState<User>();
-
-  const loadUser = async () => {
-    const response = await api.get("/users/nathallye");
-
-    setUser(response.data);
-  }
+  const {user, fetchUser} = useContext(UserContext);
 
   useEffect(() => {
-    loadUser();
+    fetchUser();
   }, []); // como não foi informado uma DependencyList, esse useEffect será executado apenas uma única vez
 
   return (
@@ -45,10 +28,10 @@ export const Profile = () => {
         <ProfileCardInfos>
           <header>
             <h1>{user?.name}</h1>
-            <a href={user?.html_url}>
+            <Link to={user?.html_url ?? ""} >
               <span>GITHUB</span>
               <ArrowSquareUpRight size={14} color="#3294F8" />
-            </a>
+            </Link>
           </header>
           <div>
             <span>

@@ -14,7 +14,7 @@ const searchFormSchema = zod.object({
 type SearchFormInputs = zod.infer<typeof searchFormSchema>;
 
 export const SearchForm = () => {
-  const { fetchPosts } = useContext(PostsContext);
+  const { posts, fetchPosts } = useContext(PostsContext);
 
   const {
     register,
@@ -32,7 +32,7 @@ export const SearchForm = () => {
     <SearchFormContainer onSubmit={handleSubmit(searchPostsHandler)}>
       <div>
         <span>Publicações</span>
-        <span>6 publicações</span>
+        <span>{posts.length} publicações</span>
       </div>
       <input
         type="text"

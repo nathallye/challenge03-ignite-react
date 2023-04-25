@@ -43,10 +43,17 @@ export const PostContainer = styled.div`
     text-align: left;
 
     /*Limitar texto exibido na home*/
-    max-width: 80ch;
+    /* max-width: 80ch;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis; */
     /* white-space: pre-wrap; */
-    white-space: nowrap;
+    /* white-space: pre-line; */
+
+    display: -webkit-box;
+    overflow : hidden;
+    text-overflow: ellipsis;
+    white-space: pre-line;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
   }
 `;

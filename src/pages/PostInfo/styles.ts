@@ -50,7 +50,7 @@ export const PostInfoTitle = styled.div`
     }
   }
 
-  body {
+  div {
     background: ${props => props.theme["base-profile"]};
 
     color: ${props => props.theme["base-text"]};

@@ -11,12 +11,8 @@ import { BlogContainer, PostsContainer } from "./styles";
 export const Home = () => {
   const { posts, fetchPosts } = useContext(PostsContext);
 
-  const loadPosts = async (data: string) => {
-    await fetchPosts(data);
-  };
-
   useEffect(() => {
-    loadPosts("repo:nathallye/challenge03-ignite is:issue");
+    fetchPosts("repo:nathallye/challenge03-ignite is:issue");
   }, []); // como não foi informado uma DependencyList, esse useEffect será executado apenas uma única vez
 
   return (

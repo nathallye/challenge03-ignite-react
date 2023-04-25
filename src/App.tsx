@@ -6,17 +6,20 @@ import { Router } from "./Router";
 
 import { defaultTheme } from "./styles/themes/default";
 import { GlobalStyle } from "./styles/global";
+import { UserProvider } from "./contexts/UserContext";
 
 export const App = () => {
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
       
-      <PostsProvider>
-        <BrowserRouter>
-          <Router />
-        </BrowserRouter>
-      </PostsProvider>
+      <UserProvider>
+        <PostsProvider>
+          <BrowserRouter>
+            <Router />
+          </BrowserRouter>
+        </PostsProvider>
+      </UserProvider>
     </ThemeProvider>
   )
 };

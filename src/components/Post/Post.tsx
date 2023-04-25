@@ -1,5 +1,6 @@
-import { formatDistanceToNow } from "date-fns";
-import ptBR from "date-fns/locale/pt-BR";
+import { useNavigate } from "react-router-dom";
+
+import { dateFormatter } from "../../utils/formatterDate";
 
 import { PostContainer } from "./styles";
 
@@ -18,17 +19,17 @@ interface PostProps {
 
 
 export const Post = ({post}: PostProps) => {
-  const convertionDate = new Date(post.created_at);
+  const convertionDate = dateFormatter(new Date(post.created_at));
+  const navigate = useNavigate();
 
   return (
-    <PostContainer>
+    <PostContainer onClick={() => {
+      navigate(`/PostInfo/${post.id}`);
+    }}>
       <div>
         <h1>{post.title}</h1>
         <span>
-          {formatDistanceToNow(convertionDate, {
-            addSuffix: true,
-            locale: ptBR
-          })}
+          {convertionDate}
         </span>
       </div>
       <p>

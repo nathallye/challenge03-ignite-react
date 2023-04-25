@@ -12,7 +12,7 @@ import {
 import { UserContext } from "../../contexts/UserContext";
 import { PostsContext } from "../../contexts/PostsContext";
 
-import { dateFormatter } from "../../utils/formatterDate";
+import { dateFormatter } from "../../utils/dateFormatter";
 
 import { PostInfoContainer, PostInfoContent, PostInfoTitle } from "./styles";
 

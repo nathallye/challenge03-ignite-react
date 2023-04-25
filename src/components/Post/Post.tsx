@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-import { dateFormatter } from "../../utils/formatterDate";
+import { dateFormatter } from "../../utils/dateFormatter";
 
 import { PostType } from "../../types/post";
 import { PostContainer } from "./styles";

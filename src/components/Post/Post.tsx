@@ -2,19 +2,11 @@ import { useNavigate } from "react-router-dom";
 
 import { dateFormatter } from "../../utils/formatterDate";
 
+import { PostType } from "../../types/post";
 import { PostContainer } from "./styles";
 
-interface Post {
-  number: string;
-  title: string;
-  url: string;
-  comments: number;
-  body: string;
-  created_at: string;
-};
-
 interface PostProps {
-  post: Post;
+  post: PostType;
 };
 
 

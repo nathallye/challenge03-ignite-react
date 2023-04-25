@@ -29,6 +29,8 @@ export const PostInfo = () => {
   
   // const convertionDate = dateFormatter(new Date(post?.created_at));
 
+  console.log(post);
+
   return (
     <PostInfoContainer>
       <PostInfoTitle>

@@ -12,6 +12,7 @@ export const PostContainer = styled.div`
   background: ${props => props.theme["base-post"]};
   border-radius: 10px;
   
+  cursor: pointer;
 
   @media (max-width: 600px) {
     width: 100%;
@@ -31,6 +32,7 @@ export const PostContainer = styled.div`
 
     span {
       width: 35%;
+      text-align: right;
 
       color: ${props => props.theme["base-span"]};
       font-size: 0.875rem;
@@ -40,11 +42,9 @@ export const PostContainer = styled.div`
   p {
     color: ${props => props.theme["base-text"]};
     font-size: 1rem;
-    text-align: left;
+    text-align: justify;
 
     /*Limitar texto exibido na home*/
-    /* white-space: pre-line; */
-
     display: -webkit-box;
     overflow : hidden;
     text-overflow: ellipsis;

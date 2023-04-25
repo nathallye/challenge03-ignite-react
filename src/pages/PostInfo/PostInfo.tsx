@@ -1,7 +1,6 @@
 import { useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { formatDistanceToNow } from "date-fns";
-import ptBR from "date-fns/locale/pt-BR";
+import { Link, useParams } from "react-router-dom";
+
 import {
   ArrowSquareUpRight,
   CalendarBlank,
@@ -19,19 +18,16 @@ import { PostInfoContainer, PostInfoContent, PostInfoTitle } from "./styles";
 
 export const PostInfo = () => {
   const {user, fetchUser} = useContext(UserContext);
-  const {posts, fetchPosts} = useContext(PostsContext);
+  const {post, fetchPost} = useContext(PostsContext);
 
-  // TODO: Fazer outra chamada para api de busca do post 
+  const { issueNumber } = useParams();
   
   useEffect(() => {
     fetchUser();
+    fetchPost(issueNumber);
   }, []); // como não foi informado uma DependencyList, esse useEffect será executado apenas uma única vez
-
-  // const currentPost = posts.find((post) => {
-  //   return post.id == 1679889889;
-  // });
-
-  // const convertionDate = dateFormatter(new Date(currentPost?.created_at));
+  
+  // const convertionDate = dateFormatter(new Date(post?.created_at));
 
   return (
     <PostInfoContainer>
@@ -47,7 +43,7 @@ export const PostInfo = () => {
           </Link>
         </header>
         <div>
-          <h1>JavaScript data types and data structures</h1>
+          <h1>{post?.title}</h1>
         </div>
         <footer>
           <span>
@@ -60,28 +56,14 @@ export const PostInfo = () => {
           </span>
           <span>
             <ChatCircle size={18} color="#3A536B" />
-            5 comentários
+            {post?.comments} comentários
           </span>
         </footer>
       </PostInfoTitle>
       <PostInfoContent>
-        <p>
-          Programming languages all have built-in data structures, but these
-          often differ from one language to another. This article attempts to
-          list the built-in data structures available in JavaScript and what
-          properties they have. These can be used to build other data
-          structures. Wherever possible, comparisons with other languages are
-          drawn.
-        </p>
-        <br />
-        <p>
-          <u>Dynamic typing</u>
-          <br /><br />
-          JavaScript is a loosely typed and dynamic language. Variables in
-          JavaScript are not directly associated with any particular value type,
-          and any variable can be assigned (and re-assigned) values of all
-          types:
-        </p>
+        <code>
+          {post?.body}
+        </code>
       </PostInfoContent>
     </PostInfoContainer>
   );

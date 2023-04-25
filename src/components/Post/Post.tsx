@@ -5,7 +5,7 @@ import { dateFormatter } from "../../utils/formatterDate";
 import { PostContainer } from "./styles";
 
 interface Post {
-  id: number;
+  number: string;
   title: string;
   url: string;
   comments: number;
@@ -14,7 +14,7 @@ interface Post {
 };
 
 interface PostProps {
-  post: Post
+  post: Post;
 };
 
 
@@ -24,7 +24,7 @@ export const Post = ({post}: PostProps) => {
 
   return (
     <PostContainer onClick={() => {
-      navigate(`/PostInfo/${post.id}`);
+      navigate(`/PostInfo/${post.number}`);
     }}>
       <div>
         <h1>{post.title}</h1>

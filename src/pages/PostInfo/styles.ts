@@ -83,4 +83,8 @@ export const PostInfoContent = styled.div`
   flex-direction: column;
 
   padding: 2.5rem 2rem 2.5rem 2rem;
+
+  code {
+    white-space: pre-wrap;
+  }
 `;

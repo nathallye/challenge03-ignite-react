@@ -3,7 +3,7 @@ import { ReactNode, createContext, useState } from "react";
 import { api } from "../lib/axios";
 
 interface Post {
-  id: number;
+  number: string;
   title: string;
   url: string;
   comments: number;
@@ -13,7 +13,9 @@ interface Post {
 
 interface PostsContextType {
   posts: Post[];
+  post: Post | undefined;
   fetchPosts: (query?: string) => Promise<void>;
+  fetchPost: (issueNumber?: string) => Promise<void>;
 }
 
 interface PostsProvideType {
@@ -24,6 +26,7 @@ export const PostsContext = createContext({} as PostsContextType);
 
 export const PostsProvider = ({ children }: PostsProvideType) => {
   const [posts, setPosts] = useState<Post[]>([]);
+  const [post, setPost] = useState<Post>();
 
   const fetchPosts = async (query?: string) => {
     const response = await api.get("/search/issues", {
@@ -38,8 +41,18 @@ export const PostsProvider = ({ children }: PostsProvideType) => {
     setPosts(response.data.items);
   };
 
+  const fetchPost = async (issueNumber?: string) => {
+    const response = await api.get(`/repos/nathallye/challenge03-ignite/issues/${issueNumber}`, {
+      paramsSerializer: {
+        encode: params => params
+      }
+    });
+
+    setPost(response.data);
+  };
+
   return (
-    <PostsContext.Provider value={{ posts, fetchPosts }}>
+    <PostsContext.Provider value={{ posts, post, fetchPosts, fetchPost }}>
       {children}
     </PostsContext.Provider>
   )

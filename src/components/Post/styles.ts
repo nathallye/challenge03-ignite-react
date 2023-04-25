@@ -43,10 +43,6 @@ export const PostContainer = styled.div`
     text-align: left;
 
     /*Limitar texto exibido na home*/
-    /* max-width: 80ch;
-    overflow: hidden;
-    text-overflow: ellipsis; */
-    /* white-space: pre-wrap; */
     /* white-space: pre-line; */
 
     display: -webkit-box;

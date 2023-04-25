@@ -25,7 +25,7 @@ export const Home = () => {
         <PostsContainer>
           {posts.map((post) => {
             return (
-              <Post key={post.id} post={post}/>
+              <Post key={post.number} post={post}/>
             )
           })}
         </PostsContainer>

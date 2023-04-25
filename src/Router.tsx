@@ -11,7 +11,7 @@ export const Router = () => {
       <Route path="/" element={<DefaultLayout />}>
         <Route path="/" element={<Home />} />
         <Route path="/Home" element={<Home />} />
-        <Route path="/PostInfo/:id" element={<PostInfo />} />
+        <Route path="/PostInfo/:issueNumber" element={<PostInfo />} />
       </Route>
     </Routes>
   );

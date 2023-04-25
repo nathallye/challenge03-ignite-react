@@ -5,4 +5,5 @@ export interface PostType {
   comments: number;
   body: string;
   created_at: string;
+  updated_at: string;
 }

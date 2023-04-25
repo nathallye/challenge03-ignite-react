@@ -11,7 +11,6 @@ interface PostProps {
 
 
 export const Post = ({post}: PostProps) => {
-  const convertionDate = dateFormatter(new Date(post.created_at));
   const navigate = useNavigate();
 
   return (
@@ -21,7 +20,7 @@ export const Post = ({post}: PostProps) => {
       <div>
         <h1>{post.title}</h1>
         <span>
-          {convertionDate}
+          {dateFormatter(post.updated_at)}
         </span>
       </div>
       <p>

@@ -26,10 +26,6 @@ export const PostInfo = () => {
     fetchUser();
     fetchPost(issueNumber);
   }, []); // como não foi informado uma DependencyList, esse useEffect será executado apenas uma única vez
-  
-  // const convertionDate = dateFormatter(new Date(post?.created_at));
-
-  console.log(post);
 
   return (
     <PostInfoContainer>
@@ -54,7 +50,7 @@ export const PostInfo = () => {
           </span>
           <span>
             <CalendarBlank size={18} color="#3A536B" />
-            {/* {convertionDate} */}
+            {dateFormatter(post?.updated_at)}
           </span>
           <span>
             <ChatCircle size={18} color="#3A536B" />

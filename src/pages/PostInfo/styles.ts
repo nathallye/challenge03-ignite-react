@@ -12,11 +12,6 @@ export const PostInfoContainer = styled.div`
   margin: 0 auto;
   margin-top: -5rem;
   padding: 0 1.5rem;
-
-  @media (max-width: 600px) {
-    display: flex;
-    flex-direction: column;
-  }
 `;
 
 export const PostInfoTitle = styled.div`
@@ -56,6 +51,12 @@ export const PostInfoTitle = styled.div`
     color: ${props => props.theme["base-text"]};
     font-size: 1rem;
 
+    @media (max-width: 600px) {
+      display: flex;
+
+      align-self: center;
+    }
+
     h1 {
       font-size: 1.5rem;
       color: ${props => props.theme["base-title"]};
@@ -65,6 +66,11 @@ export const PostInfoTitle = styled.div`
   footer {
     display: flex;
     gap: 1.5rem;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
+
 
     span {
       display: flex;

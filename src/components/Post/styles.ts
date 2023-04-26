@@ -14,6 +14,10 @@ export const PostContainer = styled.div`
   
   cursor: pointer;
 
+  @media (max-width: 860px) {
+    width: 100%;
+  }
+
   @media (max-width: 600px) {
     width: 100%;
   }

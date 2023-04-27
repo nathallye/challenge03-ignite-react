@@ -5,6 +5,21 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    outline: none;
+
+    ::-webkit-scrollbar {
+      width: 0.45rem;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: ${props => props.theme["scrollbar"]};
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 999px;
+      background: ${props => props.theme["scrollbar"]};
+    }
   }
 
   :focus {

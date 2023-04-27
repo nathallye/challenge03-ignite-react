@@ -1,5 +1,11 @@
 # Github Blog
 
+<div align="center">
+  <img width="600" src="https://user-images.githubusercontent.com/86172286/234748789-2a160ef7-a0fd-4d94-93d5-fc140fd7cc77.gif">
+</div>
+
+## Sobre o desafio
+
 Nesse desafio, você vai desenvolver uma aplicação que utilizará da API do GitHub para buscar issues de um repositório, dados do seu perfil e exibir elas como um blog.
 
 - Listagem do seu perfil com imagem, número de seguidores, nome e outras informações disponíveis pela API do GitHub.

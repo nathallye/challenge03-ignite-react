@@ -27,8 +27,6 @@ export const PostInfo = () => {
     fetchPost(issueNumber);
   }, []); // como não foi informado uma DependencyList, esse useEffect será executado apenas uma única vez
 
-  console.log(post);
-
   return (
     <PostInfoContainer>
       <PostInfoTitle>

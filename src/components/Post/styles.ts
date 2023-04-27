@@ -32,6 +32,10 @@ export const PostContainer = styled.div`
     h1 {
       color: ${props => props.theme["base-title"]};
       font-size: 1.25rem;
+
+      @media (max-width: 600px) {
+        font-size: 1.1rem;
+      }
     }
 
     span {

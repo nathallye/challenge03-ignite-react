@@ -88,6 +88,8 @@ export const PostInfoContent = styled.div`
   display: flex;
   flex-direction: column;
 
+  gap: 1rem;
+
   padding: 2.5rem 2rem 2.5rem 2rem;
 
   code {

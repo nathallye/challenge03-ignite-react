@@ -27,6 +27,8 @@ export const PostInfo = () => {
     fetchPost(issueNumber);
   }, []); // como não foi informado uma DependencyList, esse useEffect será executado apenas uma única vez
 
+  console.log(post);
+
   return (
     <PostInfoContainer>
       <PostInfoTitle>
@@ -35,7 +37,7 @@ export const PostInfo = () => {
             <CaretLeft size={14} color="#3294F8" />
             <span>VOLTAR</span>
           </Link>
-          <Link to={user?.html_url ?? ""}>
+          <Link to={post?.html_url ?? ""}>
             <span>VER NO GITHUB</span>
             <ArrowSquareUpRight size={14} color="#3294F8" />
           </Link>

@@ -1,4 +1,4 @@
-import { ReactNode, useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -12,10 +12,10 @@ import {
   GithubLogo,
 } from "phosphor-react";
 
-import { UserContext } from "../../contexts/UserContext";
-import { PostsContext } from "../../contexts/PostsContext";
+import { UserContext } from "../../../contexts/UserContext";
+import { PostsContext } from "../../../contexts/PostsContext";
 
-import { dateFormatter } from "../../utils/dateFormatter";
+import { dateFormatter } from "../../../utils/dateFormatter";
 
 import { PostInfoContainer, PostInfoContent, PostInfoTitle } from "./styles";
 
@@ -30,7 +30,7 @@ export const PostInfo = () => {
     fetchUser();
     fetchPost(issueNumber);
   }, []); // como não foi informado uma DependencyList, esse useEffect será executado apenas uma única vez
-
+  
   return (
     <PostInfoContainer>
       <PostInfoTitle>

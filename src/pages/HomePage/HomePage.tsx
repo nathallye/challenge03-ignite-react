@@ -8,7 +8,7 @@ import { PostsContext } from "../../contexts/PostsContext";
 
 import { BlogContainer, PostsContainer } from "./styles";
 
-export const Home = () => {
+export const HomePage = () => {
   const { posts, fetchPosts } = useContext(PostsContext);
 
   useEffect(() => {

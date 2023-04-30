@@ -19,3 +19,7 @@ Apesar de serem poucas funcionalidades, você vai precisar relembrar conceitos c
 - Formulários
 
 Para completar esse desafio você vai precisar fazer alguns preparativos e principalmente de algumas pesquisas para entender sobre a API do GitHub.
+
+<div align="center">
+  <img width="600" src="https://user-images.githubusercontent.com/86172286/235354824-e501b3fb-7584-4405-89a9-463030c98579.png">
+</div>
